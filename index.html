@@ -1,89 +1,778 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="es">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.22.2/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.22.2/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.22.2/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.22.2/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.22.2/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.22.2/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.22.2/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.22.2/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.22.2/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.22.2/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+  <meta charset="utf-8">
+  <title>Osesa</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+  <link href="favicon.ico" rel="shortcut icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate-css/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="preloader"></div>
+
+  <!--==========================
+  Hero Section--
+  ============================-->
+  <section id="hero">
+    <div class="hero-container">
+      <div class="wow fadeIn">
+        <div class="row">
+          <div class="col-md-4">
+            <img src="img/esa_logo.png" alt="" height="100px">
+          </div>
+          <div class="col-md-4">
+            <img src="img/usac_logo.png" alt="" height="100px"> 
+          </div>
+           <div class="col-md-4">
+            <img src="img/fahusac_logo.png" alt="" height="100px"> 
+          </div>
+        </div>
+
+        <h1>Bienvenidos</h1>
+        <center><img src="img/osesa_logop.png" class="img-responsive"></center>
+        <br><br>
+        <!--<h2>Creamos <span class="rotating">música para endulzar tus oídos.</span></h2>-->
+        <div class="actions">
+          <a href="#about" class="btn-get-started">Empezar</a>
+          <!--<a href="#services" class="btn-services">Nuestros Servicios</a>-->
+        </div>
+
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </section>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  <!--==========================
+  Sección de encabezado
+  ============================-->
+  <header id="header">
+    <div class="container">
+      <div id="logo" class="pull-left">
+        <a href="#hero"><img src="img/osesa_logo.png" alt="" title="" /></img></a>
+        <!-- Descomenta abajo si prefieres usar una imagen de texto -->
+        <!--<h1><a href="#hero">OSESA</a></h1>-->
+      </div>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="#hero">Inicio</a></li>
+          <li class="menu-active"><a href="#about">Institución</a></li>
+          <li><a href="#services">Fundamentación</a></li>
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#proyecto">Proyecto</a></li>
+          <!-- <li><a href="#testimonials">Justificación</a></li> -->
+          <li><a href="#portfolio">Galería</a></li>
+          <li><a href="#team">Partituras</a></li>      
+          <!--<li><a href="#contact">Acerca de</a></li>-->
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+    </div>
+  </header>
+  <!-- #header -->
+
+  <!--==========================
+  About Section
+  ============================-->
+  <section id="about">  
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">ESA</h3>
+          <div class="section-title-divider"></div>
+          <center><img class="img-responsive" src="img/esa_logo.png"></center>
+          <br>
+          <strong>Nombre de la Institución: </strong>Escuela Superior de Arte (ESA)
+          <br>
+          <br>
+          <strong>Tipo de Institución: </strong> 
+          <ul>
+            <li>Pública</li>
+            <li>División de la Universidad de San Carlos de Guatemala</li>
+          </ul>
+          <br>
+          <strong>Ubicación geográfica </strong>
+          <ul style="list-style: none;">
+            <li>Figura 1 </li>
+            <li>2ª. Avenida 12-40, Zona 1, Antigua Escuela de Medicina y Paraninfo Universitario, </li>
+            <li>Primer nivel, ala norte, Centro Histórico, Ciudad de Guatemala. </li>
+          </ul>
+          <br><br>
+          <div class="embed-responsive embed-responsive-16by9">
+            <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.262904401809!2d-90.51941818567933!3d14.641012080011407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a21a1ea10909%3A0x7bebc1f6be1390aa!2sEscuela%20Superior%20De%20Arte%2C%20USAC!5e0!3m2!1ses-419!2sgt!4v1631950114541!5m2!1ses-419!2sgt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></center>
+          </div>
+          <br><br>
+          <strong>Visión </strong>
+          <p class="about-text">
+            Elevar el nivel cultural del guatemalteco a través de la creación artística, enriqueciendo la cultura nacional por medio del trabajo de los artistas. 
+          </p>
+          <strong>Misión </strong>
+          <p class="about-text">
+           Formar artistas con capacidad de caracterizar lo guatemalteco y universalizarlo, fomentando el desarrollo social a través de los valores éticos y estéticos contenidos en la creación artística.
+          </p>
+          <strong>Políticas: </strong>No tiene.
+          <br><br>
+          <strong>Objetivos </strong>
+          <ul>
+            <li>Elevar el nivel de competencias y habilidades del artista guatemalteco según carrera.</li>
+            <li>Sistematizar la formación profesional del artista, de acuerdo a los fines y objetivos de la Escuela.</li>
+            <li>Propiciar el avance progresivo en el aprendizaje de los estudiantes, llevándolos a un desarrollo superior de la profesionalización.</li>
+            <li>Provocar la integración de la teoría con la práctica, aprovechando la zona de desarrollo potencial del estudiante.</li>
+            <li>Aplicar la diversidad metodológica en la formación de artistas, de acuerdo a la naturaleza de la asignatura de estudios y características del grupo de estudiantes. </li>
+            <li>Irrumpir en el espíritu y la psique del artista para estimular la autorrealización y la autonomía de su creación.</li>
+            <li>Interrelacionar las áreas de estudio para una mejor interacción del artista con su entorno. </li>
+            <li>Promover en el estudiante un aprendizaje significativo, para una producción artística con sentido personal y social.</li>
+            <li>Crear carreras artísticas de acuerdo con las necesidades y demandas sociales del país.</li>
+            <li>Formar artistas que proyecten su legitimación, identidad y memoria histórica tomando en cuenta la multiculturalidad de la sociedad guatemalteca.</li>
+            <li>Promover desde la universidad la innovación artística de nivel superior.</li>
+            <li>Estimular e incrementar la investigación artística para apropiarse y recuperar la genuina guatemalidad.</li>
+            <li>Incrementar la investigación en las disciplinas artísticas.</li>
+            <li>Elevar los niveles técnicos y de conocimiento, del artista guatemalteco.</li>
+          </ul>
+          <br>
+          <strong>Funciones </strong>
+          
+          <ol type="a">
+            <li>Desarrollar y proporcionar educación de calidad en las ramas artísticas de Arte Dramático, Artes Visuales, Danza, Música y aquellas que se crearen en el futuro, que interrelacione la problemática e identidad nacional, los valores culturales y estéticos con el quehacer profesional.</li>
+            <li>Fomentar la difusión de la cultura a través de la proyección al público la producción artística del profesional universitario, el establecimiento de relaciones con otras instituciones culturales y artísticas, tanto nacionales como extranjeras; y el intercambio de profesores, investigadores y estudiantes con universidades nacionales y extranjeras.</li>
+            <li>Proporcionar asesoría técnica, facilitación y acompañamiento en la investigación artística tanto a nivel profesional como estudiantil, que contribuya en forma especial al planteamiento, estudio y resolución de los problemas nacionales en el ámbito artístico.</li>
+            <li>Brindar soporte administrativo para el buen funcionamiento de todas las áreas de la Escuela, a través de la gestión, planificación, organización, dirección, control y evaluación de los recursos humanos, financieros, infraestructurales, materiales y equipo, así como la capacitación del recurso humano.</li>
+          </ol>
+          <br>
+          <strong>Fines </strong>
+          <ol type="a">
+            <li>Elevar el nivel cultural del guatemalteco, a través de la creación artística.</li>
+            <li>Diversificar la educación superior para satisfacer la demanda de estudios artísticos.</li>
+            <li>Consolidar la unidad nacional, en la diversidad cultural, a través de la creación artística.</li>
+            <li>Formar artistas con capacidad de caracterizar lo guatemalteco y universalizarlo.</li>
+            <li>Contribuir a rescatar la memoria artística del país.</li>
+            <li>Enriquecer la cultura nacional a través del trabajo profesional de los artistas.</li>
+            <li>Difundir las artes en el ámbito nacional: integrando valores culturales nacionales y universales.</li>
+            <li>Visualizar que la educación superior es esencial para que todo el país alcance el nivel necesario de desarrollo sostenible natural a partir del patrimonio cultural.</li>
+            <li>Fomentar el desarrollo social a través de los valores éticos y estéticos contenidos en la creación artística.</li>
+            <li>Coadyuvar al vínculo e interacción entre universidad y sociedad guatemalteca a través de la Escuela Superior de Arte. </li>
+          </ol>
+          <br>
+          <strong>Estructura Organizacional </strong>
+           <p class="about-text">
+           La Escuela Superior de Arte de la Universidad de San Carlos de Guatemala está integrada por el Consejo Directivo, Consejo Paritario, Unidad de Desarrollo Educativo, Dirección de Escuela Superior de Arte, Secretaría Académica, Coordinación Área Social Humanística, Coordinación Área Científica y Coordinación Área Tecnológica Especialidad Artística.  
+          </p>
+          <strong>Organigrama General</strong>
+          <ul style="list-style: none;">
+            <li>Figura 2</li>
+            <li>Organigrama General de la Escuela Superior de Arte</li>
+          </ul>
+
+          <center><img class="img-responsive" src="img/organigrama.jpg" height="800"></center>
+          Referencia:
+          <ul style="list-style: none;">
+            <li>______ Línea de Mando</li>
+            <li>------ Línea de Asesoría (Cotuc)</li>
+          </ul>
+          <br>
+          <ol type="a">
+            <li><strong>Consejo Directivo:</strong> Es el máximo órgano de dirección de la Escuela Superior de Arte. Es su responsabilidad operativizar y fomentar el desarrollo de la Escuela Superior de Arte, así como dirigir y administrar la misma. Provisionalmente, está integrado por los Decanos de la Facultad de Humanidades, Facultad de Arquitectura y el Director General de Extensión Universitaria, en tanto se lleven a cabo los procesos eleccionarios correspondientes.</li>
+            <li><strong>Consejo Paritario:</strong> Está integrado por un profesor electo por el claustro de profesores titulares y un estudiante electo, por cada carrera, de acuerdo con lo que indica el Capítulo III, Elección de miembros del Consejo Paritario, artículos 18 al 22 del Reglamento.</li>
+            <li><strong>Unidad de Desarrollo Educativo:</strong> Es una unidad asesora del Consejo Directivo encargada de informar y apoyar la toma de decisiones en asuntos de su competencia. Para su funcionamiento se dividirá en atención a asuntos estudiantiles y asuntos docentes. Asuntos estudiantiles está integrado por: Control Académico, Comisión de Bienestar Estudiantil y Comisión de Ubicación y Nivelación –CUN- y otras de carácter académico estudiantil que se crearen en el futuro. Asuntos docentes está integrado por: Comisión de Evaluación Docente COMEVAL, Jurado de Concursos de Oposición, Comisión de Formación y Desarrollo del Profesor Universitario, Sistema de Ubicación y Nivelación –SUN-, Comisión curricular y otras de carácter académico docente que se crearen en el futuro.</li>
+            <li><strong>Dirección Escuela Superior de Arte:</strong> Es la unidad académica responsable de planificar, dirigir, coordinar, supervisar y controlar las actividades de la Escuela, así como de informar y asesorar al Consejo Directivo para dar cumplimiento a los objetivos planteados. La conforma el Director de Escuela.</li>
+            <li><strong>Secretaría Escuela Superior de Arte:</strong> Es la instancia de coordinación académica responsable de planificar, organizar, dirigir y controlar las actividades técnicas y docentes de la Escuela Superior de Arte. La conforma el Secretario de Escuela.</li>
+            <li><strong>Coordinación Área Social-Humanística:</strong> Es el área que tiene a su cargo la formación profesional artística en Arte Dramático, Artes Visuales, Danza y Música, orientada en el ámbito social a formar en el estudiante el pensamiento reflexivo y crítico. Esta formación ubica al estudiante en el análisis del origen y desarrollo de la sociedad y sus instituciones, así como de las ideas y relaciones que configuran la vida social del hombre. También, orientada en el ámbito humanístico a formar el pensamiento creador, liberando todas las formas, según el constructivismo endógeno y exógeno. En correspondencia con lo cualitativo, esta formación ubica al estudiante en el análisis de la esencia constitutiva del hombre como ser y ente creador y lúdico. Comprende las disciplinas que se encuentran consignadas en el ámbito correspondiente en el entramado curricular, según carrera, a nivel de licenciatura.</li>
+            <li><strong>Coordinación Área Científica:</strong> Es el área que tiene a su cargo la formación profesional artística en Arte Dramático, Artes Visuales, Danza y Música, orientada a formar el pensamiento racional, lo integran las habilidades del pensamiento abstracto y formal, en correspondencia con lo cuantitativo. Esta formación ubica al estudiante en el mundo de las ciencias, al proporcionarle principios, leyes y criterios para obtener una representación real, objetiva y verificable del mundo ante los problemas y situaciones de su vida profesional. En este ámbito están comprendidas las ciencias exactas y las que lleven a desarrollar la función de investigación. Comprende las disciplinas que se encuentran consignadas en el ámbito correspondiente, en el entramado curricular, según carrera, a nivel de licenciatura.</li>
+            <li><strong>Área Tecnológica-Especialidad Artística:</strong> Es el área que tiene a su cargo la formación profesional artística en Arte Dramático, Artes Visuales, Danza y Música, orientada en el ámbito tecnológico a fortalecer el proceso intelectual, con énfasis en el dominio motriz. Esta formación ubica al estudiante en el saber hacer, definido como el conjunto de conocimientos propios de una técnica para formar un profesional hábil, con el máximo desarrollo de destrezas y habilidades, capaz de desenvolverse en el mundo práctico. También está orientada en el ámbito especialidad-artística a fortalecer la creación, con un pensamiento integrador y sintético, en donde lo racional y sentimental; lo teórico y lo práctico; lo llevan a la creación de una obra única, idiosincrática, irrepetible. Esta formación ubica al estudiante en el expresar su ser, su voluntad, a la autorrealización, a la alegría. Comprende las disciplinas que se encuentran consignadas en el ámbito correspondiente en el entramado curricular, según carrera, a nivel de licenciatura.</li>
+          </ol>
+          <br>
+          <strong>Organigrama Específico</strong>
+          <br><br>
+          <ul style="list-style: none;">
+            <li>Figura 3</li>
+            <li>Organigrama Específico de la Escuela Superior de Arte</li>
+          </ul>
+          <center><img class="img-responsive" src="img/organigrama2.jpg" height="400"></center>
+          Referencia:
+          <ul style="list-style: none;">
+            <li>______ Línea de Mando (Cotuc)</li>
+          </ul>
+          <br><br>
+          <strong>Organigrama Específico de Puestos de Área de Administración</strong>
+          <br><br>
+          <ul style="list-style: none;">
+            <li>Figura 4</li>
+            <li>Organigrama Específico de les Puestos de Área de Administración de la Escuela Superior de Arte</li>
+          </ul>
+          <center><img class="img-responsive" src="img/organigrama3.jpg" height="400"></center>
+          Referencia:
+          <ul style="list-style: none;">
+            <li>______ Línea de Mando (Cotuc)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+  Services Section
+  ============================-->
+  <section id="services">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Fundamentación teórica del proyecto.</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-history" aria-hidden="true"></i></div>
+          <h4 class="service-title"><a href="">historia de osesa</a></h4>
+          <p class="service-description">Según los registros de la Universidad de San Carlos, la creación de la Escuela Superior de Arte -ESA- se llevó... <a href="historia_osesa.html">Ver más</a></p>
+        </div> -->
+        <!-- <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-book" aria-hidden="true"></i></div>
+          <h4 class="service-title">Biografía Lic. Ernesto Calderón</h4>
+          <p class="service-description">Flautista, director orquestal y coral; nació el 19 de julio de 1977 e inició sus estudios artísticos multidisciplinarios... <a href="biografia.html">Ver más</a></p>
+        </div> -->
+        <!-- <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-sticky-note" aria-hidden="true"></i></div>
+          <h4 class="service-title">Entrevista con el Director de la osesa</h4>
+          <p class="service-description">¿De quién fue la idea y como inicio el proyecto OSESA? Yo estoy completamente seguro que la idea inicial fue de... <a href="entrevista.html">Ver más</a> </p>
+        </div> -->
+        <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-history" aria-hidden="true"></i></div>
+          <h4 class="service-title">Historia de la Orquesta</h4>
+          <p class="service-description">Según Fred Hamel, es una agrupación de músicos para interpretar una obra, o para improvisar en una ceremonia... <a href="historia_orquesta.html">Ver más</a></p>
+        </div>
+        <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-music" aria-hidden="true"></i></div>
+          <h4 class="service-title">La orquesta y su organización</h4>
+          <p class="service-description">La organización en grupos de instrumentos refleja la... <a href="organizacion.html">Ver más</a></p>
+        </div>
+        <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-user" aria-hidden="true"></i></div>
+          <h4 class="service-title">Director orquestal</h4>
+          <p class="service-description">El Director de orquesta es la persona encargada de proponer, dirigir, montar y presentar una obra musical... <a href="director.html">Ver más</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!--==========================
+  Perfil Section
+  ============================-->
+  <section id="perfil">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Perfil del proyecto.</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <iframe src="pdf/perfil.pdf" height="600px" width="100%"></iframe>
+      </div>
+    </div>
+  </section>
+
+   <!--==========================
+  Proyecto Section
+  ============================-->
+  <section id="proyecto">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Proyecto</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-sticky-note" aria-hidden="true"></i></div>
+          <h4 class="service-title">Entrevista con el Director de la osesa</h4>
+          <p class="service-description">¿De quién fue la idea y como inicio el proyecto OSESA? Yo estoy completamente seguro que la idea inicial fue de... <a href="entrevista.html">Ver más</a> </p>
+        </div>
+        <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-history" aria-hidden="true"></i></div>
+          <h4 class="service-title"><a href="">historia de osesa</a></h4>
+          <p class="service-description">Según los registros de la Universidad de San Carlos, la creación de la Escuela Superior de Arte -ESA- se llevó... <a href="historia_osesa.html">Ver más</a></p>
+        </div>
+        <div class="col-md-4 service-item">
+          <div class="service-icon"><i class="fa fa-book" aria-hidden="true"></i></div>
+          <h4 class="service-title">Biografía Lic. Ernesto Calderón</h4>
+          <p class="service-description">Flautista, director orquestal y coral; nació el 19 de julio de 1977 e inició sus estudios artísticos multidisciplinarios... <a href="biografia.html">Ver más</a></p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+  Subscrbe Section
+  ============================-->
+  <section id="subscribe">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-8">
+          <h3 class="subscribe-title">Orquesta Sinfónica Escuela Superior de Arte</h3>
+          <p class="subscribe-text">OSESA</p>
+        </div>
+        <div class="col-md-4 subscribe-btn-container">
+          <a class="subscribe-btn" href="https://www.youtube.com/playlist?list=PLQT0MeIcosiBoa7hfZLdzSMNsrzglIug3" target="blank"><i class="fa fa-youtube-play" aria-hidden="true"></i> Ver</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+  Testimonials Section
+  ============================-->
+  
+  <!--<section id="testimonials">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Justificación del Proyecto</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="profile">
+            <div class="pic"><img class="img-responsive" src="img/epesista.png" alt=""></div>
+            <h4>Domingo Jehudí Cotuc González</h4>
+            <span>Epesista</span>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="quote">
+            <b><img src="img/quote_sign_left.png" alt=""></b> 
+              Nacido en el municipio de San Pedro La Laguna, Sololá, rodeado por el bello lago Atitlán.
+              <br><br>
+              Estudió magisterio musical durante los años 2009 al 2012 en la Escuela Normal de Música “Jesús María Alvarado” Jornada Matutina.
+              <br><br>
+              En el año 2012 empezó a estudiar en el Conservatorio Nacional de Música, culminando con el diplomado de formación musical elemental con especialidad en PIANO, recibiendo el diploma en el año 2015 de dicha institución.
+              <br><br>
+              Obtuvo el título del Profesorado en Educación Musical de la Universidad de San Carlos de Guatemala en octubre del año 2017.
+              Recientemente graduado de la Licenciatura en Arte de la <br>Universidad de San Carlos de Guatemala. <small><img src="img/quote_sign_right.png" alt=""></small>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <div class="quote">
+            <b><img src="img/quote_sign_left.png" alt=""></b>Recientemente graduado de la Licenciatura en Arte de la <br>Universidad de San Carlos de Guatemala.<small><img src="img/quote_sign_right.png" alt=""></small>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="profile">
+            <div class="pic"><img class="img-responsive" src="img/epesista.jpg" alt=""></div>
+            <h4>Sara Wilsson</h4>
+            <span>Odeo Inc</span>
+          </div>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-md-12">
+          <center><strong><h2>Justificación</h2></strong></center>
+          <strong>Nombre del proyecto</strong>
+          <p>
+            Compilación historiográfica para la fundación de OSESA de la Escuela Superior de Arte (ESA) de la Universidad de San Carlos de Guatemala y la creación de una página web.
+          </p>
+          <strong>Tipo de Proyecto</strong>
+          <p>
+            Recopilación de documentos para la creación de una página web con los hechos relevantes que llevaron a la creación de OSESA.  
+          </p>
+          <strong>Descripción del proyecto</strong>
+          <p>
+            El proyecto consiste en realizar una investigación con personas que han sido parte del proceso de creación de OSESA por medio de entrevistas, acerca del director, algunos integrantes de la Orquesta, programas de mano o fichas de actividades en las cuales hayan participado, partituras de obras que han interpretado a lo largo de sus presentaciones y la creación de una página web exclusiva propia de OSESA. El proyecto radica en un proceso de entrevistas, investigación de documentos, fotografías y evidencias audiovisuales para luego dar paso a poder difundir y sobre todo dar a conocer el trabajo de OSESA. 
+          </p>
+          <strong>Justificación</strong>
+          <p>
+            La Orquesta Sinfónica de la Escuela Superior de Arte (OSESA) conformada por los estudiantes de dicha casa de estudios, ha sido de muy poco interés por parte de la misma institución para documentar su historia. El proyecto busca que OSESA tenga documentada su historia, considerando que es de mucha importancia, por ser una organización que puede aportar eficazmente al desarrollo de las actividades sociales y culturales que se programen por parte de la Escuela Superior de Arte, la Universidad de San Carlos o bien, directamente con instituciones y/o personas particulares que apoyen al talento nacional para contribuir a la exposición del arte musical en la sociedad guatemalteca, en áreas rurales y urbanas. Con esto se busca propagar de una manera distinta el nombre OSESA para ir ganando espacio en los escenarios musicales. Por lo que se tiene la necesidad de recopilar toda la información posible para así elaborar una página web final donde pueda incluirse, la música orquestal, el repertorio (partituras), las familias de los instrumentos que son parte de este proyecto, los primeros integrantes y toda la información sobre su director.   Este proceso puede ser difundiendo la música orquestal, ya que en Guatemala únicamente existe una orquesta conformada por músicos profesionales, pertenecientes a la Orquesta Sinfónica Nacional de Guatemala OSN.
+          </p>
+          <strong>Objetivos Generales del Proyecto</strong>
+          <br><br>
+          
+          <ul>
+            <li><strong>General</strong></li>
+            <ul>
+              <li>Documentar física y digitalmente el proceso historiográfico de la Orquesta Sinfónica de la Escuela Superior de Arte desde su germinación hasta la actualidad. </li>  
+            </ul>
+            <br>
+            <li><strong>Específicos</strong></li>
+            <ul>
+              <li>Rescatar la parte historiográfica del surgimiento de OSESA</li>
+              <li>Documentar de forma digital el repertorio presentado en participaciones de la OSESA.</li>
+              <li>Creación de una página web exclusiva para la OSESA y difundir su información.</li>
+              <li>Incluir dentro del semestre un porcentaje de la nota final del instrumento específico, como parte de los ensayos y presentaciones que puedan darse a lo largo del semestre.   </li>
+              <li>Difundir el nombre OSESA para ser tomado en cuenta por instituciones que aportan al desarrollo cultural e intelectual de la sociedad guatemalteca. </li>
+              <li>Inculcar en los integrantes de la orquesta la importancia del OSESA dentro del arte y así aportar para el conocimiento de la música orquestal en la sociedad guatemalteca. </li>
+              <li>Fomentar la educación musical por medio de la OSESA a través de su repertorio de música orquestal.  </li>
+              <li>Incentivar a las autoridades para que la OSESA pase a ser una entidad independiente como lo son la Marimba de la USAC y el Coro Universitario. </li>
+            </ul>
+          </ul>
+          <strong>Metas</strong>
+          <ul>
+            <li>Crear un lazo de cooperación entre OSESA y las autoridades de la ESA para que puedan ser escuchados y atendidos.</li>
+            <li>Que las autoridades de la -ESA- tengan intervención cuando sea necesario ya sea con los estudiantes o los catedráticos de los cursos.</li>
+            <li>Establecer un espacio físico adecuando para ensayos de presentaciones. </li>
+            <li>Elaborar un programa de ensayos de la Orquesta, en el que se cuenten con la asistencia de todos los estudiantes de las distintas familias de instrumentos musicales para un mejor aprovechamiento y desarrollo de la ejecución del instrumento con ensambles musicales.</li>
+            <li>Concientizar a los estudiantes de la importancia de pertenecer a OSESA por el papel de importancia que juega en el desarrollo del arte musical en la sociedad guatemalteca.</li>
+            <li>Recopilación de datos relevantes para la redacción de la revista de OSESA para contribuir a la promoción y publicidad esta institución en su afán de darse a conocer como una Orquesta Profesional.</li>
+            <li>Evidenciar de forma visual y auditiva con su repertorio trabajado durante el año 2020.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section> --> 
+
+  <!--==========================
+  Porfolio Section
+  ============================-->
+  <section id="portfolio">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Galería</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description"></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <a class="portfolio-item" style="background-image: url(img/aniversario/4.jpg);" href="galeria4.html">
+            <div class="details">
+              <h4>PRIMER CONCIERTO</h4>
+              <span>2014</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a class="portfolio-item" style="background-image: url(img/concierto3/3.jpg);" href="galeria5.html">
+            <div class="details">
+              <h4>Concierto</h4>
+              <span>09/04/2018</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a class="portfolio-item" style="background-image: url(img/concierto1/20.jpg);" href="galeria1.html">
+            <div class="details">
+              <h4>FIA 2019</h4>
+              <span>15/03/2019</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a class="portfolio-item" style="background-image: url(img/concierto2/2.jpg);" href="galeria3.html">
+            <div class="details">
+              <h4>Concierto en Zaragoza</h4>
+              <span>7/05/2019</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-3">
+          <a class="portfolio-item" style="background-image: url(img/varios/6.jpg);" href="galeria6.html">
+            <div class="details">
+              <h4>Otros conciertos</h4>
+              <span>OSESA</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!--==========================
+  Team Section
+  ============================-->
+  <section id="team">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Partituras</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description"></p>
+        </div>
+      </div>
+
+       <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th><center>Título</center></th>
+            <th><center>Compositor</center></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="pdf/1.pdf" target="blank">Concierto para Fagot y Orquesta</a></td>
+            <td>Weber</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/2.pdf" target="blank">Concierto para Flauta y Orquesta K 313 en Sol Mayor</a></td>
+            <td>Wolfgang Amadeus Mozart</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/3.pdf" target="blank">La flauta magica n 0 Overture 5_37</a></td>
+            <td>Wolfgang Amadeus Mozart</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/4.pdf" target="blank">La Tempesta di Mare Full score - Orchestra</a></td>
+            <td>Antonio Salieri</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/5.pdf" target="blank">Obertura – El Rapto del Seraglio</a></td>
+            <td>Wolfgang Amadeus Mozart</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/6.pdf" target="blank">Obertura Coriolano</a></td>
+            <td>Ludwing van Beethoven</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/7.pdf" target="blank">Obertura de “El Barbero de Sevilla”</a></td>
+            <td>G. Rossini</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/8.pdf" target="blank">Serenata para Pequeña Orquesta</a></td>
+            <td>Leo Weiner</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/9.pdf" target="blank">Sinfonía 5</a></td>
+            <td>Ludwing van Beethoven</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/10.pdf" target="blank">Sinfonía No. 31 “París”</a></td>
+            <td>Wolfgang Amadeus Mozart</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/11.pdf" target="blank">Suite Pastorale</a></td>
+            <td>Emmanuel Chabrier</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/12.pdf" target="blank">Symphony no. 2 in D Major, Op. 36 - I. Adagio molto - Allegro con brio</a></td>
+            <td>Ludwing van Beethoven</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/13.pdf" target="blank">Symphony no. 45 in F sharp minor _Farewell_, Hob. I_45 - Complete Score</a></td>
+            <td>Joseph Haydn</td>
+          </tr>
+          <tr>
+            <td><a href="pdf/14.pdf" target="blank">Symphony No.35 in D major, K.385</a></td>
+            <td>Wolfgang Amadeus Mozart</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--<div class="row">
+        <div class="col-md-3">
+          <div class="member">
+            <div class="pic"><img src="img/team-1.jpg" alt=""></div>
+            <h4>Walter White</h4>
+            <span>Chief Executive Officer</span>
+            <div class="social">
+              <a href=""><i class="fa fa-twitter"></i></a>
+              <a href=""><i class="fa fa-facebook"></i></a>
+              <a href=""><i class="fa fa-google-plus"></i></a>
+              <a href=""><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="member">
+            <div class="pic"><img src="img/team-2.jpg" alt=""></div>
+            <h4>Sarah Jhinson</h4>
+            <span>Product Manager</span>
+            <div class="social">
+              <a href=""><i class="fa fa-twitter"></i></a>
+              <a href=""><i class="fa fa-facebook"></i></a>
+              <a href=""><i class="fa fa-google-plus"></i></a>
+              <a href=""><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="member">
+            <div class="pic"><img src="img/team-3.jpg" alt=""></div>
+            <h4>William Anderson</h4>
+            <span>CTO</span>
+            <div class="social">
+              <a href=""><i class="fa fa-twitter"></i></a>
+              <a href=""><i class="fa fa-facebook"></i></a>
+              <a href=""><i class="fa fa-google-plus"></i></a>
+              <a href=""><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="member">
+            <div class="pic"><img src="img/team-4.jpg" alt=""></div>
+            <h4>Amanda Jepson</h4>
+            <span>Accountant</span>
+            <div class="social">
+              <a href=""><i class="fa fa-twitter"></i></a>
+              <a href=""><i class="fa fa-facebook"></i></a>
+              <a href=""><i class="fa fa-google-plus"></i></a>
+              <a href=""><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>-->
+
+      </div>
+    </div>
+  </section>
+
+  <!--==========================
+  Contact Section
+  ============================
+  <section id="contact">
+    <div class="container wow fadeInUp">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="section-title">Contact Us</h3>
+          <div class="section-title-divider"></div>
+          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 col-md-push-2">
+          <div class="info">
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p>A108 Adam Street<br>New York, NY 535022</p>
+            </div>
+
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p>info@example.com</p>
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>+1 5589 55488 55s</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-5 col-md-push-2">
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form action="" method="post" role="form" class="contactForm">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 caracteres" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Ingresa un Correo Valido" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Por favor ingrese al menos 8 caracteres del tema" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Por favor escribe algo para nosotros" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>-->
+
+  <!--==========================
+  Footer
+============================-->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            &copy; Copyright <strong><a href="https://www.facebook.com/sofitecsp">SofiTec</a></strong>. Derechos Reservados
+          </div>
+          <div class="credits">
+        
+            by <strong>Eduardo Rodríguez</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Required JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/morphext/morphext.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/stickyjs/sticky.js"></script>
+  <script src="lib/easing/easing.js"></script>
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <script src="js/custom.js"></script>
+
+  <script src="contactform/contactform.js"></script>
+
+
+</body>
+
 </html>
